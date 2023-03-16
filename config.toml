@@ -1,0 +1,20 @@
+baseURL = "https://xiarong715.github.io/"
+languageCode = "en-us"
+title = "风笑天的博客"
+theme = "maupassant-hugo"
+
+[author]
+  name = "风笑天"
+
+[params]
+  author = "风笑天"
+  subtitle = "专注于Go语言(golang)、大数据、软件架构。健康。"
+  keywords = "golang,go语言,go语言笔记,风笑天,大数据、软件架构"
+  description = "专注于IT互联网，包括但不限于Go语言(golang)、大数据、软件架构"
+  localSearch = true
+  
+ ## 配置代码高亮
+[markup]
+  [markup.highlight]
+    lineNos = true
+    style = "github"
