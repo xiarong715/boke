@@ -1,16 +1,16 @@
 baseURL = "https://xiarong715.github.io"
 languageCode = "en-us"	## "en-us" zh-CN
 title = "风笑天的博客"
-theme = "maupassant-hugo"
+theme = "maupassant-hugo"      # maupassant-hugo
 
 [author]
   name = "风笑天"
 
 [params]
   author = "风笑天"
-  subtitle = "专注于Go语言(golang)、大数据、软件架构。健康。"
-  keywords = "golang,go语言,go语言笔记,风笑天,大数据、软件架构"
-  description = "专注于IT互联网，包括但不限于Go语言(golang)、大数据、软件架构"
+  subtitle = "专注于Go语言(golang)、大数据、软件架构。注重健康。"
+  keywords = "golang,go语言,go语言笔记,风笑天,大数据、软件架构,健康"
+  description = "专注于IT互联网，包括但不限于Go语言(golang)、大数据、软件架构。热爱生活，热爱健康，积极向上的青年。"
   localSearch = true
 
   # 全局开关，开启每篇文章目录大纲

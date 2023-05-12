@@ -45,29 +45,32 @@ git version 2.9.5
 
 problems
 
-​	①fatal error: zlib.h: No such file or directory
+①`fatal error: zlib.h: No such file or directory`
 
 ```shell
 yum search zlib
 yum install zlib-devel -y
 ```
 
-​	②Can't locate ExtUtils/MakeMaker.pm in @INC (@INC contains: /usr/local/lib64/perl5 /usr/local/share/perl5
+②`Can't locate ExtUtils/MakeMaker.pm in @INC (@INC contains: /usr/local/lib64/perl5 /usr/local/share/perl5`
 
 ```shell
 yum install -y perl-CPAN
 ```
 
-​	③git fatal: Unable to find remote helper for 'https' or 'http'
+③`git fatal: Unable to find remote helper for 'https' or 'http'`
+
+或 `git: 'remote-https' is not a git command. See 'git --help'.`
 
 ```shell
+yum install -y libcurl-devel
 yum install -y curl-devel
 cd git-2.9.5
 ./configure
 make && make install
 ```
 
-​	checking for gcc... no	
+④`checking for gcc... no`
 
 ```shell
 yum install gcc
