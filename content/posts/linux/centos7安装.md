@@ -8,6 +8,8 @@ categories: ["Linux", "Centos7"]
 
 一、下载
 
+[镜像下载地址](http://mirrors.aliyun.com/centos/7.9.2009/isos/x86_64/)
+
 ```shell
 http://mirrors.aliyun.com/centos/7.7.1908/isos/x86_64/CentOS-7-x86_64-DVD-1908.iso
 http://mirrors.aliyun.com/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-Minimal-2009.iso
@@ -15,42 +17,42 @@ http://mirrors.aliyun.com/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-Minimal-20
 
 二、安装
 
-1. 分区（新手方案）
+1.分区（新手方案）
 
-   启动分区/boot ：512M或1024M
+​	启动分区`/boot` ：`512M`或`1024M`
 
-   swap分区 ：内存的2倍
+`	swap`分区 ：内存的2倍
 
-   根分区 /    ：剩余的空间
+​	根分区 `/`    ：剩余的空间
 
-2. 设置静态IP及DNS	
+2.设置静态`IP`及`DNS`
 
-   设置静态IP
+设置静态`IP`
 
-   ```shell
-   vi /etc/sysconfig/network-scripts/ifcfg-ens33
-   修改为：
-   	BOOTPROTO=static      # 静态IP
-   	ONBOOT=yes			  # 开机启动
-   	
-   	IPADDR=192.168.80.130 # IP
-   	NETMASK=255.255.255.0 # 子网掩码
-   	GATEWAY=192.168.80.2  # 网关
-   ```
+```shell
+vi /etc/sysconfig/network-scripts/ifcfg-ens33
+修改为：
+	BOOTPROTO=static      # 静态IP
+	ONBOOT=yes			  # 开机启动
+	
+	IPADDR=192.168.80.130 # IP
+	NETMASK=255.255.255.0 # 子网掩码
+	GATEWAY=192.168.80.2  # 网关
+```
 
-   添加DNS
+添加`DNS`
 
-   ```
-   vi /etc/resolv.conf
-   修改为：
-   	nameserver 8.8.8.8
-   	nameserver 114.114.114.114
-   或
-   	vi /etc/sysconfig/network-scripts/ifcfg-ens33
-   修改为：
-   	DNS1=8.8.8.8
-   	DNS2=114.114.114.114
-   ```
+```tex
+vi /etc/resolv.conf
+修改为：
+	nameserver 8.8.8.8
+	nameserver 114.114.114.114
+或
+	vi /etc/sysconfig/network-scripts/ifcfg-ens33
+修改为：
+	DNS1=8.8.8.8
+	DNS2=114.114.114.114
+```
 
 三、更换源
 
@@ -60,7 +62,7 @@ http://mirrors.aliyun.com/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-Minimal-20
 mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
 ```
 
-下载 repo 文件:
+下载 `repo` 文件:
 
 ```shell
 // aliyun 阿里源
@@ -81,7 +83,7 @@ yum clean all
 yum makecache
 ```
 
-四、安装C/C++编译器
+四、安装`C/C++`编译器
 
 ```shell
 yum install gcc gcc-c++
