@@ -52,7 +52,7 @@ http://mirrors.aliyun.com/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-Minimal-20
    	DNS2=114.114.114.114
    ```
 
-三、更换为阿里源
+三、更换源
 
 备份:
 
@@ -63,12 +63,12 @@ mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
 下载 repo 文件:
 
 ```shell
-// aliyun
+// aliyun 阿里源
 wget -O /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo
 或
 curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo
 
-// huawei yun
+// huawei yun 华为源
 wget -O /etc/yum.repos.d/CentOS-Base.repo https://repo.huaweicloud.com/repository/conf/CentOS-7-reg.repo
 或
 curl -o /etc/yum.repos.d/CentOS-Base.repo https://repo.huaweicloud.com/repository/conf/CentOS-7-reg.repo
@@ -85,5 +85,26 @@ yum makecache
 
 ```shell
 yum install gcc gcc-c++
+```
+
+五、自动更新系统时间
+
+安装`ntp`并配置
+
+```shell
+yum install ntp -y		# 安装 ntp
+systemctl start ntpd	# 启动 ntp
+systemctl enable ntpd	# 自启动 ntp
+service ntpd status
+```
+
+修改配置文件
+
+`vi /etc/ntp.conf`
+
+```tex
+server 0.pool.ntp.org
+server 1.pool.ntp.org
+server 2.pool.ntp.org
 ```
 
