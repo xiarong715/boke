@@ -65,15 +65,29 @@ mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
 下载 `repo` 文件:
 
 ```shell
-// aliyun 阿里源
+# aliyun 阿里源
 wget -O /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo
-或
+# 或
 curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo
+```
 
-// huawei yun 华为源
+```shell
+# huawei yun 华为源
 wget -O /etc/yum.repos.d/CentOS-Base.repo https://repo.huaweicloud.com/repository/conf/CentOS-7-reg.repo
-或
+# 或
 curl -o /etc/yum.repos.d/CentOS-Base.repo https://repo.huaweicloud.com/repository/conf/CentOS-7-reg.repo
+
+# 华为源地址：https://mirrors.huaweicloud.com/home
+```
+
+```shell
+# epel (Extra Packages for Enterprise Linux) 源
+mv /etc/yum.repos.d/epel.repo /etc/yum.repos.d/epel.repo.backup
+wget -O /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-7.repo
+
+# 或
+yum -y install epel-release		# 安装 epel 源
+yum repolist	# 查看仓库列表
 ```
 
 更新缓存:
@@ -89,14 +103,27 @@ yum makecache
 yum install gcc gcc-c++
 ```
 
+开发环境安装 [参考](https://www.cnblogs.com/smomop/p/14904769.html)
+
+```shell
+yum -y groupinstall "Development tools"
+```
+
 五、自动更新系统时间
+
+设置时区
+
+```shell
+rm -f /etc/localtime
+ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+```
 
 安装`ntp`并配置
 
 ```shell
 yum install ntp -y		# 安装 ntp
 systemctl start ntpd	# 启动 ntp
-systemctl enable ntpd	# 自启动 ntp
+systemctl enable ntpd	# 开机启动 ntp
 service ntpd status
 ```
 
@@ -108,5 +135,36 @@ service ntpd status
 server 0.pool.ntp.org
 server 1.pool.ntp.org
 server 2.pool.ntp.org
+```
+
+六、防火墙设置
+
+[参考](https://blog.csdn.net/yybk426/article/details/94649619)
+
+列出开放的端口
+```shell
+firewall-cmd --list-ports		# 列出所有开放端口
+firewall-cmd --list-all			# 列出详细信息
+```
+
+添加`80、8080`端口到防火墙，即放开`80、8080`端口。
+
+```shell
+firewall-cmd --zone=public --permanent --add-port=80/tcp 
+firewall-cmd --zone=public --permanent --add-port=8080/tcp
+firewall-cmd --zone=public --permanent --add-port=1314/tcp
+```
+
+重启`firewalld`服务，生效配置
+
+```shell
+systemctl restart firewalld
+```
+
+七、脚本加入开机启动
+
+```shell
+# 脚本加入开机启动
+echo "/bin/sh /server/scripts/inotify.sh &" >> /etc/rc.local		# /etc/rc.local脚本在开机时被执行
 ```
 
