@@ -7,7 +7,11 @@ date: 2020-12-01T20:32:32+08:00
 
 1.download a tarball
 
+[下载网址](https://mirrors.edge.kernel.org/pub/software/scm/git/)
+
 [下载最新版本git](https://www.kernel.org/pub/software/scm/git/)
+
+[源代码包下载地址](https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.9.5.tar.xz)
 
 ```shell
 wget https://www.kernel.org/pub/software/scm/git/git-2.9.5.tar.xz
@@ -55,7 +59,7 @@ yum install zlib-devel -y
 ②`Can't locate ExtUtils/MakeMaker.pm in @INC (@INC contains: /usr/local/lib64/perl5 /usr/local/share/perl5`
 
 ```shell
-yum install -y perl-CPAN
+yum install -y perl-devel
 ```
 
 ③`git fatal: Unable to find remote helper for 'https' or 'http'`

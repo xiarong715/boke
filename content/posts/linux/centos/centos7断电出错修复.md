@@ -1,5 +1,5 @@
 ---
-title: "Centos7断电出错修复"
+title: "Centos7 断电出错修复"
 date: 2023-05-18T16:56:07+08:00
 draft: false
 ---

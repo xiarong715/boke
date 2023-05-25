@@ -42,9 +42,9 @@ yum install -y go
 
 ```shell
 解压
-	tar -xvzf go1.15.4.src.tar.gz -C /usr/local
+	tar -xvzf go1.15.4.src.tar.gz -C /tools
 编译
-	cd /usr/local/go/src
+	cd /tools/go/src
 	./all.bash
 ```
 
@@ -58,9 +58,10 @@ export GOPROXY=https://goproxy.cn	# go package proxy
 export GOROOT=/usr/local/go			# go root directory
 export GOPATH=$HOME/go				# go path directory
 export PATH=$PATH:$GOROOT/bin
+```
 
-生效配置文件：
-source /etc/profile
+```shell
+source /etc/profile	# 生效配置文件
 ```
 
 5.测试
@@ -68,8 +69,8 @@ source /etc/profile
 显示版本信息，说明go环境搭建完成。
 
 ```shell
-go version
-go version go1.15.4 linux/amd64
+go version			# 打印出go的版本号表明安装成功
+# go version go1.15.4 linux/amd64
 ```
 
 

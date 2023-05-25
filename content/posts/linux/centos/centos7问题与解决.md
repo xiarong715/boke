@@ -1,5 +1,5 @@
 ---
-title: "Centos7问题与解决"
+title: "Centos7 问题与解决"
 date: 2023-05-18T17:05:03+08:00
 draft: false
 ---
