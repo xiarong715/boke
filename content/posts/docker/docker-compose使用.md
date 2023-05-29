@@ -8,7 +8,7 @@ draft: false
 
 1.docker-compose的作用
 
-
+方便管理docker容器
 
 2.下载安装
 

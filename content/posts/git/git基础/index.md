@@ -124,7 +124,24 @@ $ git push --set-upstream origin master
 $ git push					# 经过上一步的操作，这一步相当于： git push origin master
 ```
 
-6.身份验证
+6.`git tag`
+
+```shell
+git tag 				# 查看本地所有的 tag
+git tag v1.0.8			# 给当前版本打tag,tag为v1.0.8
+git push origin v1.0.8	# 上传tag v1.0.8到远程服务器
+
+# 删除远程tag v1.0.8，分为两步
+git tag -d v1.0.8					# 删除本地 tag v1.0.8
+git push origin :refs/tags/v1.0.8	# 删除远程 tag v1.0.8
+
+git ls-remote			# 查看远程所有的 tag 和分支
+
+git checkout tag_name	# 会提示HEAD detached at tag_name，tag相当于是一个快照，是不能更改它的代码。
+git checkout -b branch_name tag_name # 如果要在某个tag代码的基础上做修改，需要建一个分支，分支的内容和tag的内容相同。
+```
+
+7.身份验证
 
 `git push`上传要验证身份，因此在`repo-url`中带上用户名和密码，`github`不再支持在`url`中带上用户名和密码的形式。
 

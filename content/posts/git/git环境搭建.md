@@ -79,8 +79,3 @@ make && make install
 ```shell
 yum install gcc
 ```
-
-
-
-
-

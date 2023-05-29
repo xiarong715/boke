@@ -70,3 +70,19 @@ git config --global core.safecrlf false
 git config --global core.safecrlf warn
 ```
 
+3.`go`项目，下载第三方库，上传到自建的仓库，需删除源有仓库的信息。
+
+问题：
+```shell
+git add wechat/GOPATH/src/github.com/satori/go.uuid/codec.go
+
+# fatal: Pathspec 'wechat/GOPATH/src/github.com/satori/go.uuid/codec.go' is in submodule 'wechat/GOPATH/src/github.com/satori/go.uuid'
+```
+
+解决：
+```shell
+rm -rf wechat/GOPATH/src/github.com/satori/go.uuid/.git
+git rm -rf --cached wechat/GOPATH/src/github.com/satori/go.uuid
+git add wechat/GOPATH/src/github.com/satori/go.uuid
+```
+
