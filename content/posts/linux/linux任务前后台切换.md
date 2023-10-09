@@ -4,7 +4,6 @@ date: 2021-02-12T18:19:40+08:00
 tags: ["linux"]
 categories: ["Linux"]
 draft: false
-
 ---
 
 1. 查看后台运行的任务

@@ -55,6 +55,7 @@ vi /etc/profile 编辑文件添加下面内容：
 
 export GO111MODULE=on				# enable go moudle
 export GOPROXY=https://goproxy.cn	# go package proxy
+export GOSUMDB=sum.golang.google.cn	# go package sumdb
 export GOROOT=/usr/local/go			# go root directory
 export GOPATH=$HOME/go				# go path directory
 export PATH=$PATH:$GOROOT/bin
