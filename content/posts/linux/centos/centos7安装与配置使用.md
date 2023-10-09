@@ -1,7 +1,7 @@
 ---
-title: "Centos7 安装"
+title: "Centos7 安装与配置使用"
 date: 2021-02-11T17:08:50+08:00
-draft: flase
+draft: false
 tags: ["linux", "centos7"]
 categories: ["Linux", "Centos7"]
 ---
