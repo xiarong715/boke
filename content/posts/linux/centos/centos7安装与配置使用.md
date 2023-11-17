@@ -44,12 +44,12 @@ vi /etc/sysconfig/network-scripts/ifcfg-ens33
 
 ```tex
 vi /etc/resolv.conf
-修改为：
+修改为：（不推荐，/etc/resolv.conf是网络管理器创建的，网络重启会被修改）
 	nameserver 8.8.8.8
 	nameserver 114.114.114.114
 或
 	vi /etc/sysconfig/network-scripts/ifcfg-ens33
-修改为：
+修改为：（推荐，会把变化同步到/etc/resolv.conf中）
 	DNS1=8.8.8.8
 	DNS2=114.114.114.114
 ```
