@@ -54,6 +54,12 @@ vi /etc/resolv.conf
 	DNS2=114.114.114.114
 ```
 
+重启网络
+
+```shell
+systemctl restart network
+```
+
 三、更换源
 
 备份:

@@ -101,4 +101,8 @@ docker exec -it redis-test /bin/bash			# 进入 redis-test 容器的终端
 docker run -ti --privileged=true -d -p 2255:22 --name rtlbuildee_ubuntu --restart=always 51e7336035ad4b2aba84207b1554af54 /sbin/init
 ```
 
+```shell
+docker run -ti --privileged=true -d -p 2255:22 --name rtlbuildee_ubuntu --restart=always 51e7336035ad4b2aba84207b1554af54
+```
+
 通过宿主机`ssh root@ip:2255`登录容器。
