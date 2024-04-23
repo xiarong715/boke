@@ -141,6 +141,12 @@ date: 2023-03-14T17:35:08+08:00
    docker build -t user.manager:v1.0 .
    ```
 
+   运行镜像
+
+   ```shell
+   docker run -ti --privileged=true -d -p 2200:22 --name lsy_python3.6 --restart=always lsy/ubuntu-python3.6:v1.0
+   ```
+
    
 
 5. 镜像构建过程
