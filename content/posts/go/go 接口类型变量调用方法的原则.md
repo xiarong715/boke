@@ -1,5 +1,5 @@
 ---
-title: "Go接口类型变量调用方法的原则"
+title: "Go 接口类型变量调用方法的原则"
 date: 2023-06-25T16:38:02+08:00
 draft: false
 tags: ["golang","接口类型变量"]

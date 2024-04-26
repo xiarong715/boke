@@ -2,8 +2,8 @@
 title: "Go 调式器dlv"
 date: 2023-06-12T15:15:18+08:00
 draft: false
-tags: ["git", "dlv", "debug"]
-categories: ["Git", "Delve"]
+tags: ["golang", "dlv", "debug"]
+categories: ["Golang", "Delve"]
 ---
 
 [参考](https://blog.csdn.net/DisMisPres/article/details/128866995)
